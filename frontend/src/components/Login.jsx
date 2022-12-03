@@ -36,7 +36,7 @@ const Login = () => {
       localStorage.setItem("user", JSON.stringify(res.data));
 
       alert("Login Successful!");
-      navigate("/");
+      navigate("/home");
     } catch (err) {
       alert(err.response.data.error);
     }
