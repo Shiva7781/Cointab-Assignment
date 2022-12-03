@@ -1,3 +1,43 @@
 .App {
   text-align: center;
 }
+
+.Navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: aqua;
+}
+
+a {
+  text-decoration: none;
+}
+
+a :hover {
+  color: red;
+}
+
+.Navbar h3 {
+  margin: 15px;
+  cursor: pointer;
+
+  /* border: 1px solid red; */
+}
+
+.Home,
+.Register,
+.Login {
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+
+  /* border: 1px solid red; */
+}
+
+button {
+  cursor: pointer;
+}
