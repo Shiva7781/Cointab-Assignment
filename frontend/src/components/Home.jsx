@@ -8,7 +8,7 @@ const Home = () => {
     window.localStorage.clear();
 
     alert("Logged out!");
-    navigate("/");
+    navigate("/login");
   };
 
   const User = JSON.parse(localStorage.getItem("user"));
