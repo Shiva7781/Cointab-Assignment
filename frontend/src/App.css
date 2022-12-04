@@ -2,12 +2,20 @@
   text-align: center;
 }
 
+body {
+  min-height: 100vh;
+  width: 100vw;
+  background-color: #cfd8e2;
+  color: rgb(27, 69, 105);
+  font-family: sans-serif;
+}
+
 .Navbar {
   display: flex;
   align-items: center;
   justify-content: center;
-
-  background-color: aqua;
+  color: aliceblue;
+  background: cornflowerblue;
 }
 
 a {
@@ -21,23 +29,84 @@ a :hover {
 .Navbar h3 {
   margin: 15px;
   cursor: pointer;
+  color: white;
 
   /* border: 1px solid red; */
 }
 
-.Home,
+.App-link {
+  color: #8be3fb;
+}
+
 .Register,
-.Login {
-  height: 100vh;
-
+.Login,
+.showDataStyle {
   display: flex;
-  flex-direction: column;
-  /* justify-content: center; */
+  justify-content: center;
   align-items: center;
-
+  flex-direction: column;
   /* border: 1px solid red; */
 }
 
-button {
+form {
+  background: cornflowerblue;
+  padding: 2rem;
+  border-radius: 1rem;
+  outline: none;
+  text-align: left;
+}
+
+form label {
+  margin-top: 5rem;
+  font-size: 1.5rem;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+form input {
+  min-width: 20rem;
+  height: 2rem;
+  border-radius: 0.5rem;
+  font-size: 1.2rem;
+  text-align: left;
+  border: none;
+  margin-top: 0.3rem;
+  padding: 0.5rem;
+  outline: none;
+}
+
+button[type] {
+  border: none;
+  padding: 0.4rem 1rem;
+  text-align: center;
+  margin-top: 1rem;
+  font-family: "Raleway", sans-serif;
+  border-radius: 0.3rem;
   cursor: pointer;
+  outline: none;
+}
+
+button[type]:hover {
+  background-color: teal;
+  color: aliceblue;
+}
+
+.showDataStyle {
+  min-width: 23rem;
+  width: 23rem;
+  min-height: 2rem;
+  padding: 1rem;
+  background: cornflowerblue;
+  color: aliceblue;
+  margin-top: 4rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  border-radius: 1rem;
+  box-shadow: 0 1rem 1rem -0.8rem rgba(0, 0, 0, 0.5);
+}
+
+.showDataStyle p {
+  font-size: 1.5rem;
 }

@@ -15,8 +15,7 @@ const Home = () => {
   // console.log("User:", User);
 
   return (
-    <div className="Home">
-      <p>Email ID</p>
+    <div className="showDataStyle">
       <p>{User ? User.email : "Not Available"}</p>
 
       <button onClick={handleLogout}>Logout</button>
