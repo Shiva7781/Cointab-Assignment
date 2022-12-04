@@ -15,10 +15,14 @@ const Home = () => {
   // console.log("User:", User);
 
   return (
-    <div className="showDataStyle">
-      <p>{User ? User.email : "Not Available"}</p>
+    <div className="Home">
+      <div className="showDataStyle">
+        <p>{User ? User.email : "Not Available"}</p>
 
-      <button onClick={handleLogout}>Logout</button>
+        <button type="" onClick={handleLogout}>
+          Logout
+        </button>
+      </div>
     </div>
   );
 };
