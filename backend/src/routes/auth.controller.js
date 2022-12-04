@@ -57,17 +57,29 @@ router.post("/login", async (req, res) => {
     let currentTime = new Date().getHours() * 60 + new Date().getMinutes();
     // console.log("currentTime:", currentTime);
 
-    let DateDiff = Math.floor(updatedAtDate - currentDate);
+    let DateDiff = Math.abs(updatedAtDate - currentDate);
     // console.log("DateDiff:", DateDiff);
+
+    let Today = new Date(updatedAtT);
+    let Tomorrow = Today.setDate(Today.getDate() + 1);
+
+    let resumetime =
+      new Date(Tomorrow).toLocaleTimeString("en-US", {
+        hour12: false,
+      }) +
+      " " +
+      new Date(Tomorrow).toLocaleDateString();
+
+    // console.log("resumetime:", resumetime);
     //
 
     if (
       (wrongCountP === 5 && DateDiff === 0) ||
       (wrongCountP === 5 && DateDiff === 1 && currentTime < UpdatedAtTime)
     ) {
-      return res
-        .status(401)
-        .json({ error: `Your account has been suspended for 24 hours` });
+      return res.status(401).json({
+        error: `Your account has been suspended for 24 hours. It will resume at ${resumetime}`,
+      });
     }
 
     // account has been continued after 24 hrs of suspension and setting wrongPasswordCount: 0
@@ -77,10 +89,12 @@ router.post("/login", async (req, res) => {
     ) {
       await User.updateOne(
         { email: user.email },
-        { $set: { wrongPasswordCount: user.wrongPasswordCount * 0 } }
+        { $set: { wrongPasswordCount: 0 } }
       );
 
-      return res.status(401).json({ error: "Please try again" });
+      return res.status(401).json({
+        error: "Your account has been continued! Please try again to login",
+      });
     }
     //
 
